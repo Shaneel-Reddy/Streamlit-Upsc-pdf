@@ -4,18 +4,18 @@ python-dotenv==1.0.0
 
 # AI/LLM
 google-generativeai==0.3.2
-langchain==0.1.5          # Older version compatible with Pydantic v1
-langchain-google-genai==0.0.5
-langchain-core==0.1.21
+langchain==0.1.6
+langchain-google-genai==0.0.6
+langchain-core==0.1.22
 
 # Data Processing
-pandas==2.2.0
-pydantic<2.0               # Pydantic v1.x for Python 3.12 compatibility
+pandas==2.1.1
+pydantic==2.6.1
 openpyxl==3.1.2
 
 # PDF/Image Processing
 PyMuPDF==1.23.26
-Pillow==10.4.0
+Pillow==10.2.0
 
 # Additional utilities
 python-multipart==0.0.9
