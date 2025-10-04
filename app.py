@@ -226,19 +226,31 @@ ALLOWED_HIERARCHY = {
 # GEMINI API CONFIGURATION
 # =============================================================================
 
-def get_secret(key: str) -> str:
-    return st.secrets.get(key) or os.getenv(key)
-# Multiple API keys for rate limiting
-API_KEYS = [
-    key for key in [
-        get_secret("GOOGLE_API_KEY_1"),
-        get_secret("GOOGLE_API_KEY_2"),
-        get_secret("GOOGLE_API_KEY_3"),
-        get_secret("GOOGLE_API_KEY_4"),
-        get_secret("GOOGLE_API_KEY_5"),
-        get_secret("GOOGLE_API_KEY_6"),
-        get_secret("GOOGLE_API_KEY_7")
-    ] if key
+# def get_secret(key: str) -> str:
+#     return st.secrets.get(key) or os.getenv(key)
+# # Multiple API keys for rate limiting
+# API_KEYS = [
+#     key for key in [
+#         get_secret("GOOGLE_API_KEY_1"),
+#         get_secret("GOOGLE_API_KEY_2"),
+#         get_secret("GOOGLE_API_KEY_3"),
+#         get_secret("GOOGLE_API_KEY_4"),
+#         get_secret("GOOGLE_API_KEY_5"),
+#         get_secret("GOOGLE_API_KEY_6"),
+#         get_secret("GOOGLE_API_KEY_7")
+#     ] if key
+# ]
+
+API_KEYS = [ 
+    key for key in [ 
+        os.getenv("GOOGLE_API_KEY_1"),
+        os.getenv("GOOGLE_API_KEY_2"),
+        os.getenv("GOOGLE_API_KEY_3"),
+        os.getenv("GOOGLE_API_KEY_4"),
+        os.getenv("GOOGLE_API_KEY_5"),
+        os.getenv("GOOGLE_API_KEY_6"),
+        os.getenv("GOOGLE_API_KEY_7")
+    ] if key is not None 
 ]
 
 # Model configurations with rate limits
